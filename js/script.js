@@ -19,7 +19,7 @@ let fiveNumber = randomNum();
 
 // creo una funzione timer che si attiverà dopo tot sec per nascondere i numeri
 setTimeout(hideItem, 1000);
-setTimeout(countDowm, 2000);
+setTimeout(countDown, 2000);
 
 function hideItem() {
     let hide = document.getElementById('title').classList
@@ -27,12 +27,27 @@ function hideItem() {
 }
 
 // creo una funzione timer per fare apparire 5 prompt
-function countDowm() {
+function countDown() {
     let lucky = []
     for (i = 0; i < 5; i++) {
         let ins = prompt('Stai tentando la fortuna: Inserisci un numero')
         console.log(ins)
         lucky.push(ins)
-        console.log(lucky)
+        // console.log(lucky)
     }
+}
+
+function confronto() {
+    let itemIndovinati = [];
+    let score = 0;
+
+    for (let i = 0; i < numArr.length; i++) {
+        for (let j = 0; j < lucky.length; i++) {
+            if (numArr[i] === lucky[j]) {
+                itemIndovinati.push(numArr[i])
+            }
+        }
+    }
+    console.log(itemIndovinati)
+
 }
