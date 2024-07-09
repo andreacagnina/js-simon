@@ -16,17 +16,23 @@ function randomNum() {
 }
 let fiveNumber = randomNum();
 
-// creo una funzione timer che si attiverà dopo tot sec
-setTimeout(hideItem, 2000);
-setTimeout(countDowm, 3000);
+
+// creo una funzione timer che si attiverà dopo tot sec per nascondere i numeri
+setTimeout(hideItem, 1000);
+setTimeout(countDowm, 2000);
 
 function hideItem() {
-    document.getElementById('title').className = 'd-none';
+    let hide = document.getElementById('title').classList
+    hide.add('d-none')
 }
 
+// creo una funzione timer per fare apparire 5 prompt
 function countDowm() {
+    let lucky = []
     for (i = 0; i < 5; i++) {
         let ins = prompt('Stai tentando la fortuna: Inserisci un numero')
         console.log(ins)
+        lucky.push(ins)
+        console.log(lucky)
     }
 }
