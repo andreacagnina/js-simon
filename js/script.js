@@ -19,9 +19,9 @@ function randomNum() {
 }
 
 
-setTimeout(hideItem, 1000);
-setTimeout(inserimentoNum, 2000);
-setTimeout(result, 3000);
+setTimeout(hideItem, 30000);
+setTimeout(inserimentoNum, 31000);
+setTimeout(result, 32000);
 
 // creo una funzione timer per nascondere i numeri
 function hideItem() {
@@ -29,18 +29,18 @@ function hideItem() {
     hide.add('d-none')
 }
 
-// creo una funzione timer per fare apparire 5 prompt e richiamo la funzione di confronto
+// creo una funzione timer per fare apparire 5 prompt e tramite ciclo while metto delle condizioni
 function inserimentoNum() {
     for (i = 0; i < 5; i++) {
         let ins = parseInt(prompt('Stai tentando la fortuna: Inserisci un numero'));
         while (ins < 1 || ins > 100 || isNaN(ins)) {
             ins = parseInt(prompt('Il valore inserito non è valido. Riprova'));
         }
-        console.log(ins)
         lucky.push(ins)
     }
 }
 
+// creo una funzione con timer che farà apparire a video i risultati ottenuti solo dopo che il giocatore avrà inserito i numeri tramite prompt
 function result() {
     let punteggio = confronto();
     // console.log(punteggio.length)
