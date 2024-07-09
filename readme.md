@@ -7,8 +7,7 @@ Individuate gli elementi di cui avete bisogno per realizzare il programma.
 
 creo una funzione che mi genera 5 numeri casuali
 creo un array vuoto
-credo un ciclo while
-se il numero generato e lo inserisco nell'array
+credo un ciclo while e lo inserisco nell'array
 mostra a video i numeri 
 creo una funzione temp di 30 secondi dopo la quale scompariranno i numeri mostrati
 dopo 30 sec avvio 5 prompt
