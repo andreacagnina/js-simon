@@ -44,7 +44,13 @@ function inserimentoNum() {
 function result() {
     let punteggio = confronto();
     // console.log(punteggio.length)
-    score.innerHTML = `'Hai indovinato i numeri "${punteggio}". Totalizzando ${punteggio.length} punti'`
+    if (punteggio.length == 0) {
+        score.innerHTML = 'Magari sei fortunato in amore'
+    } else if (punteggio.length == 1) {
+        score.innerHTML = `Hai indovinato solo il numero "${punteggio}". Totalizzando ${punteggio.length} punto`
+    } else {
+        score.innerHTML = `Hai indovinato i numeri "${punteggio}". Totalizzando ${punteggio.length} punti`
+    }
 
 }
 
