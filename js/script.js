@@ -36,12 +36,12 @@ function inserimentoNum() {
         console.log(ins)
         lucky.push(ins)
     }
-    confronto();
 }
 
 function result() {
     let punteggio = confronto();
-    score.innerHTML = `'Hai indovinato i numeri ${punteggio}. Totalizzando punti'`
+    // console.log(punteggio.length)
+    score.innerHTML = `'Hai indovinato i numeri "${punteggio}". Totalizzando ${punteggio.length} punti'`
 
 }
 
@@ -53,8 +53,8 @@ function confronto() {
             itemIndovinati.push(lucky[i])
         }
     }
-    console.log(itemIndovinati)
-    console.log(itemIndovinati.length)
+    // console.log(itemIndovinati)
+    // console.log(itemIndovinati.length)
 
     return itemIndovinati;
 }
