@@ -1,4 +1,10 @@
 const title = document.getElementById('title');
+const score = document.getElementById('score');
+let fiveNumber = randomNum();
+let lucky = [];
+
+title.innerHTML = fiveNumber.join(' ');
+
 // creo una funzione per generare 5 numeri casuali
 function randomNum() {
     const numArr = [];
@@ -7,27 +13,23 @@ function randomNum() {
         let num = Math.floor(Math.random() * 100 + 1);
         numArr.push(num);
         console.log(num)
-
     }
+
     return numArr;
 }
 
-let fiveNumber = randomNum();
-let lucky = [];
 
-title.innerHTML = fiveNumber.join(' ');
-
-
-// creo una funzione timer che si attiverà dopo tot sec per nascondere i numeri
 setTimeout(hideItem, 1000);
 setTimeout(inserimentoNum, 2000);
+setTimeout(result, 3000);
 
+// creo una funzione timer per nascondere i numeri
 function hideItem() {
     let hide = document.getElementById('title').classList
     hide.add('d-none')
 }
 
-// creo una funzione timer per fare apparire 5 prompt
+// creo una funzione timer per fare apparire 5 prompt e richiamo la funzione di confronto
 function inserimentoNum() {
     for (i = 0; i < 5; i++) {
         let ins = parseInt(prompt('Stai tentando la fortuna: Inserisci un numero'));
@@ -37,12 +39,15 @@ function inserimentoNum() {
     confronto();
 }
 
+function result() {
+    let punteggio = confronto();
+    score.innerHTML = `'Hai indovinato i numeri ${punteggio}. Totalizzando punti'`
+
+}
+
+// creo una funzione per confrontare i numeri generati con i numeri inseriti dal giocatore
 function confronto() {
     let itemIndovinati = [];
-    console.log(lucky)
-    console.log(fiveNumber)
-
-
     for (let i = 0; i < lucky.length; i++) {
         if (fiveNumber.includes(lucky[i])) {
             itemIndovinati.push(lucky[i])
@@ -51,4 +56,5 @@ function confronto() {
     console.log(itemIndovinati)
     console.log(itemIndovinati.length)
 
+    return itemIndovinati;
 }
