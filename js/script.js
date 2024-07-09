@@ -33,6 +33,9 @@ function hideItem() {
 function inserimentoNum() {
     for (i = 0; i < 5; i++) {
         let ins = parseInt(prompt('Stai tentando la fortuna: Inserisci un numero'));
+        while (ins < 1 || ins > 100 || isNaN(ins)) {
+            ins = parseInt(prompt('Il valore inserito non è valido. Riprova'));
+        }
         console.log(ins)
         lucky.push(ins)
     }
